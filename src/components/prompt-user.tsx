@@ -2,11 +2,12 @@
 
 import React, { useState, useEffect } from 'react';
 import { toast, Toaster } from "sonner"
+import {useRouter} from "next/navigation";
 
 function PromptUser({ children }: { children: React.ReactNode }) {
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [name, setName] = useState('');
-
+    const router = useRouter();
     useEffect(() => {
         const userName = localStorage.getItem('userName');
         if (!userName) {
@@ -20,11 +21,13 @@ function PromptUser({ children }: { children: React.ReactNode }) {
             toast.error("You have to provide a name");
             navigator.vibrate([50, 50])
         } else if (name.length >= 3) {
-            toast.success(`Welcome to MovieLab ${name}`)
+            toast.success(`Welcome to MovieLab ${name}`);
+            navigator.vibrate([50, 50]);
         }
         if (name.trim()) {
             localStorage.setItem('userName', name);
             setIsModalVisible(false);
+            router.refresh();
         }
 
     };
