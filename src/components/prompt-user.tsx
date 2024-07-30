@@ -2,11 +2,12 @@
 
 import React, { useState, useEffect } from 'react';
 import { toast, Toaster } from "sonner"
+import {useRouter} from "next/navigation";
 
 function PromptUser({ children }: { children: React.ReactNode }) {
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [name, setName] = useState('');
-
+    const router = useRouter();
     useEffect(() => {
         const userName = localStorage.getItem('userName');
         if (!userName) {
