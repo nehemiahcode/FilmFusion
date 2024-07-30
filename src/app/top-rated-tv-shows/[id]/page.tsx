@@ -48,7 +48,7 @@ function TopRatedTvShows({ params }: Params) {
                     />
                 </div>
 
-                <div className="md:px-5 col-span-2 mt-5 md:mt-0 text-white">
+                <div className="md:px-5 md:col-span-2 col-span-1 max-w-full mt-5 md:mt-0 text-white space-y-4">
                     <h1 className="text-3xl font-bold">{data.name}</h1>
                     <p className="text-lg flex gap-2">{data.release_date} ({data.origin_country}){" "}{data.genres.map((genre: any) => (genre.name)).join(', ')}</p>
                     <p className="italic text-xl font-semibold py-2">{data.tagline}</p>

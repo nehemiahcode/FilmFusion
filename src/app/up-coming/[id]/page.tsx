@@ -21,15 +21,15 @@ function PopularMoviesById({ params }: Params) {
             queryFn: () => getAllPopularMoviesById(params.id)
         }
     );
-    if (isLoading) return <Spinner/>;
+    if (isLoading) return <Spinner />;
 
     return (
         <section
             className="relative w-full min-h-60 px-4 py-10 bg-cover bg-center heading"
-            style={{ backgroundImage: `url(https://image.tmdb.org/t/p/w500/${data.backdrop_path || data.poster_path  ? data.backdrop_path : data.belongs_to_collection.poster_path})` }}
+            style={{ backgroundImage: `url(https://image.tmdb.org/t/p/w500/${data.backdrop_path || data.poster_path ? data.backdrop_path : data.belongs_to_collection.poster_path})` }}
         >
             {/* Overlay */}
-            <div className="absolute inset-0 bg-black/60"/>
+            <div className="absolute inset-0 bg-black/60" />
             <div className="relative max-w-full grid grid-cols-1 md:grid-cols-1 xl:grid-cols-3  place-content-center place-items-center md:place-items-start">
                 <div className="rounded-md col-span-1 h-[32rem] shadow-2xl w-full sm:max-w-lg md:max-w-xl">
                     <Image
@@ -41,7 +41,7 @@ function PopularMoviesById({ params }: Params) {
                     />
                 </div>
 
-                <div className="md:px-5 col-span-2 mt-5 md:mt-0 text-white">
+                <div className="md:px-5 md:col-span-2 col-span-1 max-w-full mt-5 md:mt-0 text-white space-y-4">
                     <h1 className="text-3xl font-bold">{data.title}</h1>
                     <p className="text-lg flex gap-2">{data.release_date} ({data.origin_country}){" "}{data.genres.map((genre: any) => (genre.name)).join(', ')}</p>
                     <p className="italic text-xl font-semibold py-2">{data.tagline}</p>

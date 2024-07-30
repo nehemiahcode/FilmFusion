@@ -8,6 +8,7 @@ import { IoMdArrowForward, IoMdArrowRoundBack } from "react-icons/io";
 import { Typewriter } from 'react-simple-typewriter'
 import SkeletonLoader from "@/components/skeleton";
 import getTopratedTv from "@/hooks/getTopratedTv"; 
+import Scroll from "@/hooks/authScroll";
 
 export default function TopRatedTv() {
     const [page, setPage] = useState<number>(1);
@@ -41,7 +42,7 @@ export default function TopRatedTv() {
                 </h1>
                 <p className="text-xl py-2">Millions of movies, TV shows and people to discover. Explore now.</p>
             </div>
-            <div className="flex text-black gap-3 overflow-x-auto w-full h-full  pb-5  mx-auto ">
+            <Scroll>
                 {data?.map((data: any) => (
                     <MovieCards
                         path={`/top-rated-tv-shows/${data.id}?date=${data.first_air_date}`}
@@ -54,7 +55,7 @@ export default function TopRatedTv() {
                         releaseDate={data.first_air_date}
                         vote_average={data.vote_average} />
                 ))}
-            </div>
+            </Scroll>
             <span>Current Page: {page}</span>
             <div className="flex justify-between mt-4">
                 <button

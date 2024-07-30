@@ -8,6 +8,7 @@ import { IoMdArrowForward, IoMdArrowRoundBack } from "react-icons/io";
 import { Typewriter } from 'react-simple-typewriter'
 import SkeletonLoader from "@/components/skeleton";
 import getTrending from "@/hooks/getTrending";
+import Scroll from "@/hooks/authScroll";
 
 export default function Trending() {
     const [page, setPage] = useState<number>(1);
@@ -34,14 +35,15 @@ export default function Trending() {
 
     return (
         <div className=" flex  flex-col max-w-screen-xl w-full pb-10 h-full px-4 lg:px-7 heading">
-            <div className="py-10 w-full flex flex-col my-4 text-slate-800 dark:text-white"
+            <div className="py-5 w-full flex flex-col my-4 text-slate-800 dark:text-white"
             >
-                <h1 className="text-5xl font-semibold heading ">
+                <h1 className=" text-3xl lg:text-5xl font-semibold ">
                     <Typewriter words={["Welcome to", "FilmFusion."]} />
                 </h1>
                 <p className="text-xl py-2">Millions of movies, TV shows and people to discover. Explore now.</p>
             </div>
-            <div className="flex text-black gap-3 overflow-x-auto w-full h-full  pb-5  mx-auto ">
+
+            <Scroll>
                 {data?.map((data: any) => (
                     <MovieCards
                         path={data.media_type === 'tv' ? `/airing-today-tv-shows/${data.id}?date=${data.first_air_date}` : `/popular-movies/movies/${data.id}?date=${data.release_date}`}
@@ -54,7 +56,7 @@ export default function Trending() {
                         releaseDate={data.release_date || data.first_air_date}
                         vote_average={data.vote_average} />
                 ))}
-            </div>
+            </Scroll>
             <span>Current Page: {page}</span>
             <div className="flex justify-between mt-4">
                 <button

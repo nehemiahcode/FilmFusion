@@ -27,7 +27,7 @@ function Tv({ params }: Params) {
 
     return (
         <section
-            className="relative w-full min-h-60 p-4 bg-cover bg-center"
+              className="relative w-full min-h-60 px-4 py-10 bg-cover bg-center"
             style={{ backgroundImage: `url(https://image.tmdb.org/t/p/w500/${data.backdrop_path | data.poster_path ? data.poster_path : data.backdrop_path})` }}
         >
             {/* Overlay */}
@@ -44,7 +44,7 @@ function Tv({ params }: Params) {
                     />
                 </div>
 
-                <div className="md:px-5 col-span-2 mt-5 md:mt-0 text-white">
+                <div className="md:px-5 md:col-span-2 col-span-1 max-w-full mt-5 md:mt-0 text-white space-y-4">
                     <h1 className="text-3xl font-bold py-1">{data.name}</h1>
                     <p className="text-lg flex gap-2">{data.first_air_date} to {data.last_air_date} ({data.origin_country}){" "}{data.genres.map((genre: any) => (genre.name)).join(', ')}</p>
                     <p>{data.episode_run_time} mins</p>

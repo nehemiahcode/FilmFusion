@@ -8,6 +8,7 @@ import { IoMdArrowForward, IoMdArrowRoundBack } from "react-icons/io";
 import { Typewriter } from 'react-simple-typewriter';
 import SkeletonLoader from "@/components/skeleton";
 import getUpComingMovies from "@/hooks/getUpComingMovies";
+import Scroll from "@/hooks/authScroll";
 
 export default function UpComing() {
     const [page, setPage] = useState<number>(3);
@@ -41,7 +42,7 @@ export default function UpComing() {
                 </h1>
                 <p className="text-xl py-2">Millions of movies, TV shows and people to discover. Explore now.</p>
             </div>
-            <div className="flex text-black gap-3 overflow-x-auto w-full h-full  pb-5  mx-auto ">
+            <Scroll>
                 {data?.map((data: any) => (
                     <MovieCards
                         path={`/up-coming/${data.id}?date=${data.release_date}`}
@@ -54,7 +55,7 @@ export default function UpComing() {
                         releaseDate={data.release_date}
                         vote_average={data.vote_average} />
                 ))}
-            </div>
+            </Scroll>
             <span>Current Page: {page}</span>
             <div className="flex justify-between mt-4">
                 <button

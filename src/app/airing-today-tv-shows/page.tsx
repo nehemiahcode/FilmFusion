@@ -8,6 +8,7 @@ import { IoMdArrowForward, IoMdArrowRoundBack } from 'react-icons/io'
 import SkeletonLoader from '@/components/skeleton'
 import { MdNetworkCheck } from 'react-icons/md'
 import { Typewriter } from 'react-simple-typewriter'
+import Scroll from '@/hooks/authScroll'
 
 function OnTheAir() {
   const [page, setPage] = useState(1);
@@ -39,7 +40,7 @@ function OnTheAir() {
         </h1>
         <p className="text-xl py-2">Millions of movies, TV shows and people to discover. Explore now.</p>
       </div>
-      <div className="flex text-black gap-3 overflow-x-auto w-full h-full  pb-5  mx-auto ">
+      <Scroll>
         {data?.map((data: any) => (
           <MovieCard
             path={`/airing-today-tv-shows/${data.id}?date=${data.first_air_date}`}
@@ -52,7 +53,7 @@ function OnTheAir() {
             releaseDate={data.first_air_date}
             vote_average={data.vote_average} />
         ))}
-      </div>
+      </Scroll>
 
       <span>Current Page: {page}</span>
       <div className="flex justify-between mt-4">

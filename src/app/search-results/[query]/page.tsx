@@ -8,6 +8,7 @@ import { Skeleton } from '@/components/ui/skeleton';
 import MovieCard from '@/components/movies/movie-card';
 import { MdNetworkCheck, MdOutlineScreenSearchDesktop } from "react-icons/md";
 import { Button } from '@/components/ui/button';
+import Scroll from '@/hooks/authScroll';
 
 const SearchResults = ({ params }: { params: { query: string } }) => {
     const router = useRouter();
@@ -57,7 +58,7 @@ const SearchResults = ({ params }: { params: { query: string } }) => {
     return (
         <div className='flex flex-1 flex-col max-w-screen-xl w-full pb-10 h-full px-4 py-6'>
             <h1 className='text-xl font-semibold dark:text-white text-black py-3'>You searched for <strong>"{param}"</strong></h1>
-            <div className="flex text-black gap-3 overflow-x-auto w-full h-full  pb-5  mx-auto ">
+            <Scroll>
                 {data.results.map((movie: any) => (
                     <MovieCard
                         path={ movie.media_type === "tv" ? `/airing-today-tv-shows/${movie.id}?date=${movie.first_air_date}` : `/popular-movies/movies/${movie.id}?date=${movie.release_date}`}
@@ -69,7 +70,7 @@ const SearchResults = ({ params }: { params: { query: string } }) => {
                         vote_average={data.vote_average}
                         id={movie.id} />
                 ))}
-            </div>
+            </Scroll>
         </div>
     );
 };

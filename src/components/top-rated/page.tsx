@@ -3,11 +3,12 @@
 import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import MovieCards from "@/components/movies/movie-card";
 import { MdNetworkCheck } from "react-icons/md";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { IoMdArrowForward, IoMdArrowRoundBack } from "react-icons/io";
 import { Typewriter } from 'react-simple-typewriter'
 import SkeletonLoader from "@/components/skeleton";
 import getTopratedMovies from "@/hooks/getTopratedMovies";
+import Scroll from "@/hooks/authScroll";
 
 export default function TopRated() {
     const [page, setPage] = useState<number>(1);
@@ -41,7 +42,7 @@ export default function TopRated() {
                 </h1>
                 <p className="text-xl py-2">Millions of movies, TV shows and people to discover. Explore now.</p>
             </div>
-            <div className="flex text-black gap-3 overflow-x-auto w-full h-full  pb-5  mx-auto ">
+            <Scroll>
                 {data?.map((data: any) => (
                     <MovieCards
                         path={`/top-rated/${data.id}?date=${data.release_date}`}
@@ -54,7 +55,7 @@ export default function TopRated() {
                         releaseDate={data.release_date}
                         vote_average={data.vote_average} />
                 ))}
-            </div>
+            </Scroll>
             <span>Current Page: {page}</span>
             <div className="flex justify-between mt-4">
                 <button

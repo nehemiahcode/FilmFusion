@@ -26,7 +26,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ posterPath, title, genres, overvi
         : "This movie did not provide any meaningful overview.";
     return (
         <>
-            <Link href={path} className="flex-shrink-0  max-w-xs rounded overflow-hidden h-auto shadow-xl hover:shadow-xl dark:bg-slate-950 bg-white border text-white pb-2">
+            <Link href={path} className="flex-shrink-0  max-w-[310px] rounded overflow-hidden h-auto shadow-xl hover:shadow-xl dark:bg-slate-950 bg-white border text-white pb-2">
                 <div className="relative h-64">
                     <Image src={imageUrl} alt={title} layout="fill" objectFit="cover" className="rounded-t" />
                 </div>
