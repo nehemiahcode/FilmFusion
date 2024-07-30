@@ -54,7 +54,7 @@ function TopRatedTvShows({ params }: Params) {
                     <p className="italic text-xl font-semibold py-2">{data.tagline}</p>
                     <p >Status <span className={`${data.status === "Released" && 'text-green-500'}`}>{data.status}</span></p>
                     <blockquote className="py-6"><span className="text-xl font-bold">Overview</span> <br />{data.overview}</blockquote>
-                    <div className="flex flex-1 items-center gap-4 max-w-sm md:max-w-xl overflow-x-auto ">
+                    <div className="flex flex-1 items-center gap-4 max-w-sm md:max-w-xl overflow-x-auto">
                         {data.production_companies.map((company: any) => (
                             <div key={company.id} className={` ${company.logo_path ? "flex" : "hidden"} items-center justify-center border-2 h-48 w-48 rounded border-gray-500 flex-col max-w-lg shrink-0 p-2`}>
                                 <div>

@@ -9,7 +9,7 @@ function Scroll({children}:{children:React.ReactNode}) {
         if (scrollContainer) {
             // Automatically scroll a bit to the right after initial render
             scrollContainer.scrollBy({
-                left: 130, // Adjust this value to control how far to scroll
+                left: 100, // Adjust this value to control how far to scroll
                 behavior: 'smooth',
             });
         }

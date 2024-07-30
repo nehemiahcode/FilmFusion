@@ -104,7 +104,7 @@ const EpisodeCard = ({ episode }: { episode: any }) => {
               <Image src={episodeImage} alt={episode.name} layout='fill' objectFit='cover' className="w-full rounded-xl  h-full" />
             </div>
             <CardContent className=" absolute top-0 bg-black/40 h-full w-full rounded-xl">
-              <CardHeader className='text-left px-0 '>{episode.name}</CardHeader>
+              <CardHeader className='text-left px-0 line-clamp-1 '>{episode.name}</CardHeader>
               <CardDescription className=' line-clamp-3 text-left'>{episode.overview || "This season did not provide any meaningful overview."}</CardDescription>
               <p className='text-left'>Release Date: {episode.air_date}</p>
               <p className='flex items-center py-2 md:p-0 gap-2'> <IoIosTimer size={20} /> {episode.runtime} mins</p>
@@ -139,7 +139,7 @@ const EpisodeCard = ({ episode }: { episode: any }) => {
             <Image src={episodeImage} alt={episode.name} layout='fill' objectFit='cover' className="w-full rounded-xl  h-full" />
           </div>
           <CardContent className=" absolute top-0 bg-black/40 h-full w-full rounded-xl ">
-            <CardHeader className='text-left px-0 '>{episode.name}</CardHeader>
+            <CardHeader className='text-left px-0 line-clamp-1 '>{episode.name}</CardHeader>
             <CardDescription className=' line-clamp-3 text-left'>{episode.overview || "This season did not provide any meaningful overview."}</CardDescription>
             <p className='text-left'>Release Date: {episode.air_date}</p>
             <p className='flex items-center py-2 md:p-0 gap-2'> <IoIosTimer size={20} /> {episode.runtime} mins</p>
