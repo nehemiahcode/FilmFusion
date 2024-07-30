@@ -34,9 +34,9 @@ export default function TopRatedTv() {
 
     return (
         <div className=" flex  flex-col max-w-screen-xl w-full pb-10 h-full px-4 lg:px-7 ">
-            <div className="py-10 w-full flex flex-col my-4 text-slate-800 dark:text-white"
+             <div className="py-5 w-full flex flex-col my-4 text-slate-800 dark:text-white"
             >
-                <h1 className="text-5xl font-semibold ">
+                <h1 className=" text-3xl lg:text-5xl font-semibold ">
                 <Typewriter words={["Welcome to", "FilmFusion."]} />
                 </h1>
                 <p className="text-xl py-2">Millions of movies, TV shows and people to discover. Explore now.</p>

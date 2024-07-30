@@ -87,24 +87,7 @@ function Home() {
   );
 }
 
-// const Cards = ({ data, name }: { data: { number: string }, name: string }) => {
-//   return (
-//     <Card className="dark:bg-slate-900 dark:text-white text-slate-800 bg-white sm:col-span-full">
-//       <CardHeader className="pb-2">
-//         <CardDescription>{name}</CardDescription>
-//         <CardTitle className="text-4xl">{data.number}</CardTitle>
-//       </CardHeader>
-//       <CardContent>
-//         <div className="text-xs text-muted-foreground">
-//           +10% from last month
-//         </div>
-//       </CardContent>
-//       <CardFooter>
-//         <Progress value={55} className='bg-slate-800' />
-//       </CardFooter>
-//     </Card>
-//   );
-// }
+
 
 export default Home;
 
@@ -114,7 +97,7 @@ export default Home;
       <h1 className='text-xl text-slate-800 dark:text-white font-semibold'>{name}</h1>
       <div className='flex overflow-x-auto gap-4 py-2 w-full'>
         {data?.map((data: any) => (
-          <Link href={`/${path}/${data.id}?date=${data.release_date || data.first_air_date}`} key={data.id} className='flex-shrink-0 flex flex-col border dark:border-slate-700 dark:bg-slate-800 h-52 w-52 p-2 rounded'>
+          <Link href={`${path}/${data.id}?date=${data.release_date || data.first_air_date}`} key={data.id} className='flex-shrink-0 flex flex-col border dark:border-slate-700 dark:bg-slate-800 h-52 w-52 p-2 rounded'>
             <div className='relative h-40'>
               <Image
                 src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}

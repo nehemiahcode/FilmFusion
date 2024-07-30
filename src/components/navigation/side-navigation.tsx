@@ -29,7 +29,6 @@ import { MdWbSunny } from "react-icons/md";
 import { useTheme } from "next-themes";
 import { HiMoon } from "react-icons/hi";
 import { MdComputer } from "react-icons/md";
-import { FaDisplay } from "react-icons/fa6";
 import Image from "next/image";
 import Logo from "../../../public/android-chrome-512x512.png"
 
@@ -118,7 +117,7 @@ export function NavLayout({ children }: { children: React.ReactNode }) {
 
             <div className="flex flex-col md:ml-[220px] lg:ml-[280px] w-full overflow-x-hidden flex-1">
                 <>
-                    <header className="flex py-4 md:py-3 heading items-center justify-between  gap-4 border-b dark:bg-slate-900 bg-white px-4  lg:px-6">
+                    <header className="flex py-4 md:py-3 heading items-center justify-between  gap-4 border-b dark:bg-slate-900 bg-white px-2  lg:px-6">
                         <Sheet>
                             <SheetTrigger asChild>
                                 <Button
@@ -131,17 +130,18 @@ export function NavLayout({ children }: { children: React.ReactNode }) {
                                 </Button>
                             </SheetTrigger>
                             <SheetContent side="left" className="flex flex-col dark:bg-slate-900 overflow-y-auto bg-white">
-                                <div className="flex py-2 items-center border-b px-4 lg:h-[60px] lg:px-6 dark:bg-slate-900 bg-white text-slate-800 dark:text-white">
+                                <div className="flex py-2 items-center border-b px-2 lg:h-[60px] lg:px-6 dark:bg-slate-900 bg-white text-slate-800 dark:text-white">
                                     <Link href="/" className="flex items-center gap-2 font-semibold">
                                     <Image src={Logo} alt="Logo" width={0} height={0} className="h-6 w-6" />
                                         <span className="">FilmFusion</span>
-                                    </Link>
+                                   
                                     <Button variant="outline" size="icon" className="ml-auto h-8 w-8">
                                         <Bell className="h-4 w-4" />
                                         <span className="sr-only">Toggle notifications</span>
                                     </Button>
+                                    </Link>
                                 </div>
-                                <nav className="grid gap-2 font-medium">
+                                <nav className="grid gap-2 text-base">
                                     {navItems.map((nav: any, idx: number) => (
                                         <Link
                                             key={idx}
@@ -177,7 +177,7 @@ export function NavLayout({ children }: { children: React.ReactNode }) {
                                 <div className="relative flex w-full lg:max-w-sm items-center">
                                     <Search className="absolute left-2.5 h-4 w-4 dark:text-white text-slate-800" />
                                     <Input
-                                        type="search"
+                                        type="text"
                                         value={query}
                                         onChange={(e) => setQuery(e.target.value)}
                                         placeholder="Search for a movie, tv show, person......"

@@ -34,25 +34,25 @@ export default function UpComing() {
 
     return (
         <div className=" flex  flex-col max-w-screen-xl w-full pb-10 h-full px-4 lg:px-7 ">
-            <div className="py-10 w-full flex flex-col my-4 text-slate-800 dark:text-white"
+            <div className="py-5 w-full flex flex-col my-4 text-slate-800 dark:text-white"
             >
-                 <h1 className="text-5xl font-bold heading ">
-                <Typewriter words={["Welcome to", "FilmFusion."]}  />
+                <h1 className=" text-3xl lg:text-5xl font-semibold ">
+                    <Typewriter words={["Welcome to", "FilmFusion."]} />
                 </h1>
-                <p className="text-xl py-2 heading">Millions of movies, TV shows and people to discover. Explore now.</p>
+                <p className="text-xl py-2">Millions of movies, TV shows and people to discover. Explore now.</p>
             </div>
             <div className="flex text-black gap-3 overflow-x-auto w-full h-full  pb-5  mx-auto ">
                 {data?.map((data: any) => (
                     <MovieCards
-                    path={`/up-coming/${data.id}?date=${data.release_date}`}
-                    key={data.id}
-                    id={data.id}
-                    posterPath={data.poster_path}
-                    title={data.title}
-                    genres={[data.genre_ids]}
-                    overview={data.overview}
-                    releaseDate={data.release_date}
-                    vote_average={data.vote_average} />
+                        path={`/up-coming/${data.id}?date=${data.release_date}`}
+                        key={data.id}
+                        id={data.id}
+                        posterPath={data.poster_path}
+                        title={data.title}
+                        genres={[data.genre_ids]}
+                        overview={data.overview}
+                        releaseDate={data.release_date}
+                        vote_average={data.vote_average} />
                 ))}
             </div>
             <span>Current Page: {page}</span>
