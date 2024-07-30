@@ -87,28 +87,28 @@ function Home() {
   );
 }
 
-const Cards = ({ data, name }: { data: { number: string }, name: string }) => {
-  return (
-    <Card className="dark:bg-slate-900 dark:text-white text-slate-800 bg-white sm:col-span-full">
-      <CardHeader className="pb-2">
-        <CardDescription>{name}</CardDescription>
-        <CardTitle className="text-4xl">{data.number}</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <div className="text-xs text-muted-foreground">
-          +10% from last month
-        </div>
-      </CardContent>
-      <CardFooter>
-        <Progress value={55} className='bg-slate-800' />
-      </CardFooter>
-    </Card>
-  );
-}
+// const Cards = ({ data, name }: { data: { number: string }, name: string }) => {
+//   return (
+//     <Card className="dark:bg-slate-900 dark:text-white text-slate-800 bg-white sm:col-span-full">
+//       <CardHeader className="pb-2">
+//         <CardDescription>{name}</CardDescription>
+//         <CardTitle className="text-4xl">{data.number}</CardTitle>
+//       </CardHeader>
+//       <CardContent>
+//         <div className="text-xs text-muted-foreground">
+//           +10% from last month
+//         </div>
+//       </CardContent>
+//       <CardFooter>
+//         <Progress value={55} className='bg-slate-800' />
+//       </CardFooter>
+//     </Card>
+//   );
+// }
 
 export default Home;
 
-export function SidebarComps({ data, name, path }: { data: [{ poster_path: string, date: string, title: string, name: string, release_date: string, id: React.Key }], name: string, path: string }) {
+ const SidebarComps = ({ data, name, path }: { data: [{ poster_path: string, date: string, title: string, name: string, release_date: string, id: React.Key }], name: string, path: string }) => {
   return (
     <div className='w-full py-5'>
       <h1 className='text-xl text-slate-800 dark:text-white font-semibold'>{name}</h1>
