@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <ReactQueryClientProvider >
-          <ThemeProvider enableSystem defaultTheme="dark"  disableTransitionOnChange={false} attribute="class">
+          <ThemeProvider enableSystem defaultTheme="light"  disableTransitionOnChange={false} attribute="class">
             <NavLayout>
               <PromptUser>
                 {children}
