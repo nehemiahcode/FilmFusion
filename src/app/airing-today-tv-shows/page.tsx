@@ -60,16 +60,13 @@ function OnTheAir() {
           onClick={handlePreviousPage}
           disabled={page === 1}
           className={`${page == 1 && ' cursor-not-allowed'} px-4 flex items-center gap-x-3 py-2 bg-gray-300 text-black rounded-md disabled:opacity-50`}
-
         >
           <IoMdArrowRoundBack />   Previous
         </button>
         <span>Page {page}</span>
         <button
           onClick={handleNextPage}
-          className={`px-5 py-2 bg-slate-800 hover:bg-slate-600 flex items-center gap-x-3 text-white rounded-md`}
-        >
-          Next <IoMdArrowForward />
+          className={`px-5 py-2 bg-slate-800 hover:bg-slate-600 flex items-center gap-x-3 text-white rounded-md`}>Next <IoMdArrowForward />
         </button>
       </div>
     </section>

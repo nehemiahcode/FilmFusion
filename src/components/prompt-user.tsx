@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { toast, Toaster } from "sonner"
-import {useRouter} from "next/navigation";
+import { useRouter } from "next/navigation";
 
 function PromptUser({ children }: { children: React.ReactNode }) {
     const [isModalVisible, setIsModalVisible] = useState(false);
@@ -27,7 +27,8 @@ function PromptUser({ children }: { children: React.ReactNode }) {
             localStorage.setItem('userName', name);
             setIsModalVisible(false);
             toast.success(`Welcome to FilmFusion ${name}!`)
-            navigator.vibrate([50, 100])
+            navigator.vibrate([50, 100]);
+            router.refresh();
         }
     };
 
