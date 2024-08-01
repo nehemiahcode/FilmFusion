@@ -3,7 +3,7 @@ import axios from "axios";
 
 const api_key = process.env.TMDB_API_KEY;
 const base_url = process.env.NEXT_TMDB_BASE_URL;
-export const bearer_token = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2MjU5MTc1NWVhZDIxMzMzMzQwZjA2NTM5ZGRhYzRmOSIsIm5iZiI6MTcyMTg2NDY4Ni4yNzA5NjMsInN1YiI6IjY2YTE5MDA4MjljOTM4ODdiMDUyOWRhYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.ajfk3v3QLhnzaI6wdgV1eMLVPxb1BDZLOxQtiNkwzM0'
+export const bearer_token = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmN2MyY2ViYzAxMTc5MWE0NjNhNmEzZDc4MGY4NDQwZSIsIm5iZiI6MTcyMjQ4NjcyNS4zOTQ1ODIsInN1YiI6IjY2YWIwZWU3NzhlNDg2MzRkNWNkNWE4YiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.CqdNl7Lya8h0juW6FkTIQfQuBA8kMrJp8MrdqYG3A0o'
 
 export const tmdb = axios.create({
     baseURL: 'https://api.themoviedb.org/3',
@@ -12,7 +12,7 @@ export const tmdb = axios.create({
         Accept:"application/json"
     },
     params: {
-        api_key: '62591755ead21333340f06539ddac4f9',
+        api_key: 'f7c2cebc011791a463a6a3d780f8440e',
 
     },
 });
